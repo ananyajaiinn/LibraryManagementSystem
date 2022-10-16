@@ -4,6 +4,12 @@ import React, { useState } from "react";
 
 function AddUser() {
 
+
+  
+
+
+// the above functions are from UserDashboard 
+
   const [formData, setFormData] = useState({
     fullname: "",
     mobilenumber: "",
@@ -13,10 +19,11 @@ function AddUser() {
 
   });
 
+  // to post the data from form to db.json file using axios
   const handleFormSubmit = async (e) => {
     let response = await axios.post("http://localhost:4000/posts", formData);
     if (response) {
-      alert("data submitted successfully");
+      alert("data submitted successfully");          
     }
     else {
       alert("something went wrong");
@@ -31,10 +38,7 @@ function AddUser() {
     });
   };
 
-
-
-
-  return (
+return (
     <div className="container">
       <div className="row">
         <div div className="col-md-7">
