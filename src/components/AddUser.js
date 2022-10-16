@@ -35,6 +35,23 @@ function AddUser() {
 
   });
 
+
+  const [updateData, setUpdateData] = useState({
+    fullname: "",
+    mobilenumber: "",                              // state for modal 
+    bookedition: "",
+    bookissuedon: "",
+    returndate: "",
+    id:""
+
+  });
+
+  const handleUpdate = async ()=>{
+     await axios.put(`http://localhost:4000/posts/${updateData.id}`, updateData).then((res)=>{alert("Data updated successfully");
+    getUser();
+  });
+  }
+
   // to post the data from form to db.json file using axios
   const handleFormSubmit = async (e) => {
     let response = await axios.post("http://localhost:4000/posts", formData);
@@ -54,6 +71,8 @@ function AddUser() {
     });
     getUser();
   };
+
+  
 
 return (
     <div className="container">
@@ -147,7 +166,21 @@ return (
             }
         } >
 
-        <button className = "btn btn-info">
+        <button className = "btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal"
+        onClick={()=>
+        setUpdateData(
+          {
+            fullname:user.fullname,
+            mobilenumber:user.mobilenumber,
+            bookedition:user.bookedition,
+            bookissuedon:user.bookissuedon,
+            returndate:user.returndate,
+            id:user.id,
+          }
+        )
+    
+        }
+        >
             Edit
         </button>
 
@@ -169,6 +202,80 @@ return (
 
 
         </div>
+
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Update information</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+      <div className="mb-3">
+            <label htmlFor="exampleformControlInput1" className="form-label">FullName</label>
+            <input type="text"
+              className="form-control"
+              id="exampleformControlInput1"
+              value={updateData.fullname}
+              onChange={(e) => setUpdateData({ ...updateData, fullname: e.target.value })}
+            />
+          </div>
+
+
+          <div className="mb-3">
+            <label htmlFor="exampleformControlInput1" className="form-label">Mobile Number</label>
+            <input type="text"
+              className="form-control"
+              id="exampleformControlInput1"
+              value={updateData.mobilenumber}
+              onChange={(e) => setUpdateData({ ...updateData, mobilenumber: e.target.value })}
+            />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="exampleformControlInput1" className="form-label">Book edition</label>
+            <input type="text"
+              className="form-control"
+              id="exampleformControlInput1"
+              value={updateData.bookedition}
+              onChange={(e) => setUpdateData({ ...updateData, bookedition: e.target.value })} />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="exampleformControlInput1" className="form-label">Book issued on</label>
+            <input type="date"
+              className="form-control"
+              id="exampleformControlInput1"
+              value={updateData.bookissuedon}
+              onChange={(e) => setUpdateData({ ...updateData, bookissuedon: e.target.value })} />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="exampleformControlInput1" className="form-label">Return date</label>
+            <input type="date"
+              className="form-control"
+              id="exampleformControlInput1"
+              value={updateData.returndate}
+              onChange={(e) => setUpdateData({ ...updateData, returndate: e.target.value })} />
+          </div>
+
+
+    
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary"  data-bs-dismiss="modal" onClick={() => handleUpdate()}>Update</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
       </div>
 
