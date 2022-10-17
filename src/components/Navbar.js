@@ -1,3 +1,4 @@
+import "./Navbar.css"
 function Navbar(){
     return(
 <>
@@ -8,6 +9,9 @@ function Navbar(){
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          {/* <img  className="logo" src="/images/NavLogo.png"/> */}
+        </li>
         <li className="nav-item">
           <a className="nav-link" aria-current="page" href="/">Home</a>
         </li>
