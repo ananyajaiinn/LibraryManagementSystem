@@ -1,0 +1,24 @@
+[
+    {
+        "id": 1,
+        "caption": "Icon 1",
+        "icon" : "/images/library.png"
+
+    },
+
+    {
+        "id": 2,
+        "caption": "Icon 2",
+        "icon" : "/images/library.png"
+
+
+    },
+
+    {
+        "id": 3,
+        "caption": "Icon 3",
+        "icon" : "/images/library.png"
+
+
+    }
+]

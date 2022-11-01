@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState , useEffect} from "react";
+// import {MDBBtnGroup , MDBBtn} from "mdb-react-ui-kit";
 
 
 function AddUser() {
@@ -72,9 +73,67 @@ function AddUser() {
     getUser();
   };
 
+
+  // const [value, setValue ] = useState("");
+
+  // // const loadUserData = async()=>{
+  // //   return await axios.get("http://localhost:4000/posts").then((res)=>setData(res.data)).catch((err)=>console.log(err))
+  // // }
+
+  // const handleReset = () =>{
+  //   getUser();
+  // };
+
+
+  // const handleSearch = async(e) =>{
+  //   e.preventDefault();
+  //   return await axios.get(`http://localhost:4000/posts?q${value}`).then((response) => {
+  //     setData(response.data);
+  //     setValue("");
+  //   })
+  //   // setData();
+
+  // };
+
   
 
 return (
+  <>
+  {/* <div>
+    <form style={{
+      margin:"auto",
+      padding:"10px",
+      maxWidth:"400px",
+      alignContent:"center",
+    }}
+
+    className="d-flex input-group w-auto"
+    onSubmit={handleSearch}
+    >
+
+    <input 
+      type="text"
+      className="form-control"
+      placeholder="Search Name ..."
+      value={value}
+      onChange={(e) => setValue(e.target.value)}
+    />
+
+    
+      <MDBBtn type = "submit" color="dark" >
+        Search
+      </MDBBtn>
+
+      <MDBBtn className="mx-2" color = "info" onClick={()=> handleReset()}>
+        Reset
+      </MDBBtn>
+    
+
+
+
+    </form>
+  </div> */}
+  
     <div className="container">
       <div className="row">
         <div div className="col-md-7">
@@ -278,8 +337,8 @@ return (
 
 
       </div>
-
-    
+</>
+  
   )
 }
 

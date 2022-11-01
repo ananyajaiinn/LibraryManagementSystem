@@ -1,0 +1,21 @@
+.image{
+    height: 350px;
+    width: 650px;
+}
+
+.lib-img{
+    display: flex;
+    justify-content: center;
+}
+
+.head-text{
+    text-align: center;
+}
+
+.head-text-1{
+    text-align: center;
+    margin: 0px 15px 10px;
+    padding: 0px 80px;
+    font-size: 16px;
+    font-style: sans-serif;
+}

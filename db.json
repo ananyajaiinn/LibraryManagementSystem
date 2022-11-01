@@ -1,3 +1,12 @@
 {
-  "posts": []
+  "posts": [
+    {
+      "fullname": "ansnn",
+      "mobilenumber": "12344",
+      "bookedition": "wwee",
+      "bookissuedon": "2022-10-23",
+      "returndate": "2022-10-22",
+      "id": 2
+    }
+  ]
 }
